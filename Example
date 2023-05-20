@@ -1,0 +1,19 @@
+mport numpy as np
+kernel = np.array([[1,2],[1,2]])
+image = np.array([[1,2,-1],[1,2,-1],[-1,-2,-1]])
+print("Kernel \n", kernel)
+print("Image \n", image)
+
+
+result =[]
+for i in range(0,2):  #Filas
+  result.append([])
+  for j in range(0,2): #Columnas
+    print(f"Fila {i+1}, Columna {j+1}")
+    print("Kernel")
+    print("Imagen afectada por el kernel")
+    print(image[i:i+2,j:j+2])
+    multiplication = (np.multiply(kernel, image[i:i+2,j:j+2]))
+    result[i].append(multiplication.sum())
+print("Resultado final")
+print(np.array(result))
